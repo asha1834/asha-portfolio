@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asha | Full Stack Developer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- HERO -->
+    <header class="hero">
+      <nav class="nav">
+        <h1 class="logo">Asha Ramesh.</h1>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <h2>Hey, I'm Asha 👋</h2>
+        <h1>Full Stack Developer</h1>
+        <p>Java | Spring Boot | Hibernate | MySQL</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="section reveal">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-text">
+        Full-stack developer with hands-on experience in Java, Spring Boot,
+        Hibernate, and MySQL. Built secure, end-to-end web applications with
+        RESTful APIs, media handling, and role-based authentication. Strong in
+        backend architecture, database optimization, and clean code practices.
+        Actively seeking a software developer role to build scalable, real-world
+        solutions.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section dark reveal">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">Java</div>
+        <div class="skill-card">Python (Basic)</div>
+        <div class="skill-card">C Programming</div>
+        <div class="skill-card">Spring Boot</div>
+        <div class="skill-card">Hibernate / JPA</div>
+        <div class="skill-card">MySQL</div>
+        <div class="skill-card">HTML</div>
+        <div class="skill-card">CSS</div>
+        <div class="skill-card">JavaScript</div>
+        <div class="skill-card">Git & GitHub</div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal">
+      <h2 class="section-title">Projects</h2>
+
+      <!-- FEATURED PROJECT -->
+      <div class="featured-project">
+        <h3>🌟 Anonymous Confession Wall</h3>
+        <p>
+          A full-stack web application that enables users to post anonymous
+          confessions with image and video uploads, along with secure admin
+          moderation.
+        </p>
+
+        <ul>
+          <li>Built using Java 17, Spring Boot, Hibernate (JPA), and MySQL</li>
+          <li>JWT-based admin authentication and role-based access control</li>
+          <li>RESTful APIs for content moderation and approval workflow</li>
+          <li>Optimized database queries with pagination for performance</li>
+        </ul>
+
+        <div class="project-links">
+          <a href="https://github.com/asha1834" target="_blank">GitHub</a>
+          <a href="#" class="disabled">Live Demo</a>
+        </div>
+      </div>
+
+      <!-- OTHER PROJECTS -->
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>IoT Fire Extinguishing Robot</h3>
+          <p>
+            Designed and developed an autonomous fire-response robot using
+            ESP32, flame and smoke sensors, and motor control systems with
+            real-time monitoring.
+          </p>
+          <span>ESP32 • IoT • Sensors • Blynk</span>
+        </div>
+
+        <div class="project-card">
+          <h3>Real-Time Object Detection</h3>
+          <p>
+            Computer vision system using Python, OpenCV, YOLOv3, and
+            MobileNet-SSD for detecting objects in images, videos, and live
+            webcam feeds.
+          </p>
+          <span>Python • OpenCV • YOLOv3 • MobileNet-SSD</span>
+        </div>
+
+        <div class="project-card">
+          <h3>Grocery Expense Tracker</h3>
+          <p>
+            Java-based inventory and expense management system built using JSP,
+            Servlets, JDBC, and MySQL with full CRUD functionality.
+          </p>
+          <span>Java • JSP • Servlets • JDBC • DAO</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section dark reveal">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-text">Let’s build something meaningful together.</p>
+      <div class="contact-links">
+        <a href="mailto:asha1834mad@gmail.com">Email</a>
+        <a href="https://github.com/asha1834" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/rasha05a009270" target="_blank"
+          >LinkedIn</a
+        >
+      </div>
+    </section>
+
+    <footer class="footer">© 2026 Asha | Built with ❤️</footer>
+
+    <script>
+      const reveals = document.querySelectorAll(".reveal");
+
+      const revealOnScroll = () => {
+        reveals.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const triggerPoint = window.innerHeight - 100;
+
+          if (sectionTop < triggerPoint) {
+            section.classList.add("active");
+
+            const cards = section.querySelectorAll(
+              ".skill-card, .project-card"
+            );
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add("show");
+              }, index * 120);
+            });
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      window.addEventListener("load", revealOnScroll);
+    </script>
+  </body>
+</html>
